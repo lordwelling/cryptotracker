@@ -1,18 +1,2 @@
-import requests
-from bs4 import BeautifulSoup
-
-buttcoin = input("What coin are you interested in? ")
-def get_latest_crypto_price(coin):
-    url = 'https://www.google.com/search?q=' + (coin) + 'price'
-    HTML = requests.get(url)
-    soup = BeautifulSoup(HTML.text, 'html.parser')
-    texti = soup.find('div', attrs={
-        'class': 'BNeawe iBp4i AP7Wnd'
-    }).find({
-        'div': 'BNeawe iBp4i AP7Wnd'
-    }).text
-    return texti
-
-price = get_latest_crypto_price(buttcoin)
-print(buttcoin + ' price: ' + price)
+A mini program that fulfills your crypto price needs
 
